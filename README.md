@@ -10,7 +10,7 @@ Klinek et al. (2025), Late Summer Heat and High Vapor Pressure Deficit Lead to P
 
 To reference the paper, data, or methods, please cite Klinek et al. 2025.
 Contact Lily Klinek with questions at lpklinek\@ucdavis.edu.
-This repository's DOI is:
+This repository's DOI is: [![DOI](https://zenodo.org/badge/962820915.svg)](https://doi.org/10.5281/zenodo.15226480)
 
 ## 1. Overview
 
