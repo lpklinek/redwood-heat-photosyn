@@ -42,7 +42,7 @@ The repository is organized as follows:
 
 All raw, unprocessed data can be found in `data/raw/` .
 
-#### [Metadata]{.underline}
+#### Metadata
 
 Folder name: `00_metadata`
 
@@ -62,7 +62,7 @@ Below is a basic description of each of the columns in the metadata csv:
 | Hour | hour of measurement (rounded to nearest whole hour) for days where measurements were taken multiple times throughout the day |
 | jPAM_directory | filename containing the JUNIOR-PAM data associated with that branch |
 
-#### [LI-COR LI600 Data]{.underline}
+#### LI-COR LI600 Data
 
 Folder name: `01_li600_data_raw`
 
@@ -74,7 +74,7 @@ The other .csv files in each folder are the detailed, high-resolution measuremen
 
 Information on all LI600 data columns can be found in the LI-COR LI600 instrument manual, linked [here](https://www.licor.com/support/LI-600/topics/data-file-descriptions.html#Data).
 
-#### [Meteorological Data]{.underline}
+#### Meteorological Data
 
 Folder name: `02_meteo_data_raw`
 
@@ -87,7 +87,7 @@ All Boonville weather data used for this analysis is contained in the "boonville
 Additional information about the GHCN can be found in [Menne et al. 2012](https://doi.org/10.1175/JTECH-D-11-00103.1), and further documentation and metadata can be accessed [here](https://www.ncei.noaa.gov/pub/data/cdo/documentation/GHCND_documentation.pdf).
 Data was accessed and downloaded using NOAA's [Climate Data Online](https://www.ncdc.noaa.gov/cdo-web/) tool.
 
-#### [JUNIOR-PAM Data]{.underline}
+#### JUNIOR-PAM Data
 
 Folder name: `03_jpam_data_raw`
 
@@ -97,7 +97,7 @@ Filenames with a number after the treeID are indicative of multiple rounds of sa
 Each data collection has a `.csv` file and a `.pam` file – the `.pam` file can only be properly opened and accessed using the WALZ WinControl-3 software.
 Detailed descriptions of each variable can be found in the [instrument manual](https://www.walz.com/files/downloads/manuals/junior-pam/JUNIOR_PAM_02.pdf).
 
-#### [LI-COR LI6800 Data]{.underline}
+#### LI-COR LI6800 Data
 
 Folder name: `04_li6800_data_raw`
 
