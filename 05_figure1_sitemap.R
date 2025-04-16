@@ -4,8 +4,7 @@
 
 
 # Data and map prep  ------
-garcia_vect <- vect('/Users/lklinek/Desktop/Redwood/mygeodata/TCF_NorthCoast_CarbonProjects_March2019.gdb/GarciaRiverForest_Boundary-polygon.shp')
-
+garcia_vect <- vect('./data/raw/05_site_shapefile/GarciaRiverForest_Boundary-polygon.shp')
 # projecting site shapefile
 new_crs <-"+proj=longlat +datum=WGS84"
 garcia_vect_proj <- terra::project(garcia_vect, new_crs)
