@@ -36,7 +36,7 @@ library(viridis)
 # do i use these ones?
 # library(chron)
 # library(scales)
-
+# EDITOR: please figure this out :) 
 
 # ***** Set working directory (this will need to be edited to run on a local computer!!) ***** -----
 
@@ -45,3 +45,7 @@ setwd('/Users/lklinek/Desktop/Redwood/Klinek_et_al_2025') # edit this line with 
 # check to ensure wd is set properly
 list.files(getwd()) # should output the list of scripts and folders within Klinek et al. 2025 folder
 
+# Document the computational environment used for this analysis
+sink("sessionInfo.txt")
+sessionInfo()
+sink()
