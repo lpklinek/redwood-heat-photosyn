@@ -1,0 +1,61 @@
+
+# California (USA) Redwoods Region Composite Conservation Model Score by Watershed
+
+
+## URL
+https://databasin.org/datasets/156368cb7fa748b7a62d0a722042fce4
+
+
+## Dataset Type
+ArcGIS
+
+
+## Credits
+Conservation Biology Institute
+
+
+## Uploaded By
+[Conservation Biology Institute](https://databasin.org/people/consbio)
+
+
+## Description
+This dataset represents the composite score of watersheds for redwoodconservation across multiple criteria compiled by the ConservationBiology Institute for the report &quot;A GIS-based model for assessingconservation focal areas for the redwood ecosystem.&quot; Underlyingcriteria include late successional patch size, concentration of latesuccessional patches, road density, location of imperiled species,forest neighborhood age, forest fragmentation, potential connectivity toexisting protected areas, road/stream intersections, and forestedriparian zones. For more details, see the full report at http://consbio.org/products/reports/a-gis-based-model-for-assessing-conservation-focal-areas-for-the-redwood-ecoregion.This dataset corresponds to the Composite Model Ranking By WatershedUsing Criteria Two Through Nine (presented in figures 34, 37, 40).
+
+
+## Use Constraints
+This work is licensed under a  Creative Commons Attribution 3.0 License.
+
+
+### Original Metadata
+metadata/metadata1_original.xml
+
+
+### Data Basin Metadata
+metadata/metadata1.xml
+
+
+### Data Files
+data/./0000California _USA_ Redwoods Region Composite Conservation Model Score by Watershed.lyr
+data/commondata/data0/CA_Redwoods_Score_2_9.sbx
+data/commondata/data0/CA_Redwoods_Score_2_9.shx
+data/commondata/data0/CA_Redwoods_Score_2_9.sbn
+data/commondata/data0/CA_Redwoods_Score_2_9.shp.xml
+data/commondata/data0/CA_Redwoods_Score_2_9.shp
+data/commondata/data0/CA_Redwoods_Score_2_9.dbf
+data/commondata/data0/CA_Redwoods_Score_2_9.prj
+data/esriinfo/item.pkinfo
+data/esriinfo/iteminfo.xml
+data/esriinfo/thumbnail/thumbnail.png
+
+
+
+### Attribute Data
+
+ACRES    ACRES    Acres, calculated using the Albers CONUS Equal Area Projection    
+BASIN24K_I    BASIN24K_I    Watershed basin identifier    
+FID    FID    Internal feature number.    
+HA    HA    Hectares, calculated using the Albers CONUS Equal Area Projection    
+MEANCRITSC    MEANCRITSC    Composite score of watersheds for redwood conservation (decimal)    
+SCORE    SCORE    Composite score of watersheds for redwood conservation (integer)    
+Shape    Shape    Feature geometry.    
+
