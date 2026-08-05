@@ -1,9 +1,9 @@
-# Plotting Figure 4: Tair vs Tleaf correlation (Li600)
+# Plotting Figure 2: Tair vs Tleaf correlation (Li600)
 # Written by Lily Klinek (lpklinek@ucdavis.edu)
 # 
 
 
-Li600_all_entire %>%
+fig2 <- Li600_all_entire %>%
   filter(LightDark=='L') %>%
   filter(!is.na(Site)) %>%
   filter(Site=='Garcia') %>%
@@ -20,9 +20,8 @@ Li600_all_entire %>%
   stat_ma_eq(mapping=use_label(labels=c("eq", "R2")), label.y=.96, family='Times') + # adding R2 labels
   xlab(expression(T[air]~plain("(°C)")))+ #formatting axes titles
   ylab(expression(T[leaf]~plain("(°C)")))+
-  theme_bw(base_family = "Times", base_size=13)+
-  theme(legend.title=element_text(size=11),
-        legend.text=element_text(size=10.5))
+  theme_bw(base_family = "Times", base_size=14)+
+  theme(legend.title=element_text(size=12),
+        legend.text=element_text(size=11))
 
-
-
+fig2
