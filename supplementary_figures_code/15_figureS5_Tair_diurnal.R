@@ -1,7 +1,6 @@
 # Figure S5
 
-supp_fig_5 <- patched_data %>%
-  filter(Site=='Garcia') %>%
+supp_fig_5 <- all_meteo %>%
   mutate(datetime = as_datetime(Timestamp)) %>%
   mutate(date = date(datetime),
          hour = hour(datetime),

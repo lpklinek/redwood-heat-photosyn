@@ -4,7 +4,7 @@
 
 
 # read li600
-leaftemp600 <- read.csv('/Users/lklinek/Desktop/Redwood/Data/leaf_temp/Manual gsw+F/2026-03-03/Manual gsw+F_LI-COR Default_2026_03_04_11_21_26_1.csv', skip=1)
+leaftemp600 <- read.csv('./data/raw/05_leaf_temp_raw/Manual gsw+F/2026-03-03/Manual gsw+F_LI-COR Default_2026_03_04_11_21_26_1.csv', skip=1)
 leaftemp600 <- leaftemp600[-1,]
 
 leaftemp600 <- leaftemp600 %>%
@@ -12,7 +12,7 @@ leaftemp600 <- leaftemp600 %>%
          rh_s, rh_r, Tref, Tmeas, Tleaf, P_atm, Qamb)
 
 # read li6800
-leaftemp6800 <- read.csv('/Users/lklinek/Desktop/Redwood/Data/leaf_temp/2026-03-03-0654_logdata.csv', skip=13)
+leaftemp6800 <- read.csv('./data/raw/05_leaf_temp_raw/2026-03-03-0654_logdata.csv', skip=13)
 leaftemp6800 <- leaftemp6800[-1,]
 
 leaftemp6800 <- leaftemp6800 %>% 

@@ -8,12 +8,10 @@ tempresp_date_starts <- tempresp_dates - 7
 patched_data %>%
   mutate(Date = as.Date(date)) %>%
   dplyr::filter(Date >= tempresp_date_starts[4] & Date <= tempresp_dates[4]) %>%
-  dplyr::filter(site=='Garcia') %>%
   summarize(avg_temp = mean(Tavg, na.rm=TRUE))
 
 
 time_frame_patched <- patched_data %>%
-  dplyr::filter(Site=='Garcia') %>%
   dplyr::filter(date>='2024-05-21' & date <= '2024-10-05')
 
 global_Tmean_min <- min((time_frame_patched$Tmin + time_frame_patched$Tmax)/2, na.rm = TRUE)
@@ -21,7 +19,6 @@ global_Tmean_max <- max((time_frame_patched$Tmin + time_frame_patched$Tmax)/2, n
 
 
 fig_s3 <- patched_data %>%
-  filter(Site=='Garcia') %>%
   filter(date>='2024-05-21' & date <= '2024-10-05') %>%
   ggplot(aes(x=date, y=Tavg))+
   geom_line()+
@@ -45,3 +42,4 @@ fig_s3 <- patched_data %>%
   # theme specs
   theme_light(base_family = "Times", base_size = 13) 
 
+fig_s3

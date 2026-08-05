@@ -5,12 +5,16 @@
 # Data prep ----
 
 # load california boundary
-ca <- vect('/Users/lklinek/Desktop/castateboundary/California.shp')
+ca <- vect('./data/raw/06_castateboundary/California.shp')
 
 # load redwood boundary
-redwood <- vect('/Users/lklinek/Desktop/California (USA) Redwoods Region Composite Conservation Model Score by Watershed/data/commondata/data0/CA_Redwoods_Score_2_9.shp')
+## data source: Conservation Biology Institute
+## https://databasin.org/datasets/156368cb7fa748b7a62d0a722042fce4
+redwood <- vect('./data/raw/07_redwood_spatial/data/CA_Redwoods_Score_2_9.shp')
+
 # aggregate multiple polygons to one
 redwood_ag <- aggregate(redwood)
+
 # reproject redwood to crs of ca
 redwood_ag_proj <- project(redwood_ag, crs(ca))
 
