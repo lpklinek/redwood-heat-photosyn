@@ -12,7 +12,7 @@ plot_data <- combined_data %>%
   ungroup()
 
 # removing error points
-plot_data <- plot_data[-c(25, 24),]
+plot_data <- plot_data[-c(26, 24),]
 
 # binning each step on the temperature response curves 
 ## this is to account for slight differences in temperature between curves, since simple
@@ -38,7 +38,10 @@ plot_data['air_temp'][plot_data['step'] == 6] = 37
 plot_data['air_temp'][plot_data['step'] == 7] = 40
 plot_data['air_temp'][plot_data['step'] == 8] = 43
 
-
+plot_data %>%
+  filter(Ci>0) %>%
+  ggplot(aes(x=Tair, y=Ci, color=as.factor(Date)))+
+  geom_point()
 
 # Model fitting and comparison ----
 high_Ci <- plot_data %>%
@@ -158,6 +161,8 @@ summary_df <- high_Ci %>%
 
 
 # PLOTS with stats ----
+# 
+# note: plot panels were printed and saved separately for formatting reasons
 
 ## P1
 p1 <-  ggplot() +

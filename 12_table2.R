@@ -84,6 +84,11 @@ model_labels <- function(resp_var) {
   )
 }
 
+plot_data$curve <- interaction(plot_data$Date, plot_data$TreeID)
+plot_data$TreeID <- as.factor(plot_data$TreeID)
+plot_data$Date   <- as.factor(plot_data$Date)
+plot_data$curve   <- as.factor(plot_data$curve)
+
 results_table <- bind_rows(
   fit_and_extract("A", plot_data),
   fit_and_extract("`Fv'/Fm'`", plot_data),

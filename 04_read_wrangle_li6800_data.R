@@ -19,7 +19,7 @@ temp_curve$VPD_G <- predict(g1_G, temp_curve)
 ## To fix this, you need to open the excel file, go to the Formulas menu, and click 
 ## "Calculate Now". This will rewrite the formulas with the actual calculated value. 
 ## Then, save the file and close it. This has already been done for all data files 
-## associated with Klinek et al. 2025, but if utilizing this workflow for other data, this 
+## associated with Klinek et al. 2026, but *if utilizing this workflow for other data*, this 
 ## step will need to be done before the processing code can successfully be run. 
 
 
@@ -48,8 +48,7 @@ for (file_path in file_list) {
   tree_id <- file_info[7]
   
   # read column names
-  col_names <- suppressMessages(readxl::read_excel(file_path, range = "A15:KL15", col_names = FALSE)) 
-  %>% as.character()
+  col_names <- suppressMessages(readxl::read_excel(file_path, range = "A15:KL15", col_names = FALSE)) %>% as.character()
   
   # read only data
   data <- suppressMessages(readxl::read_excel(file_path, col_names = FALSE, skip = 16)) # data starts from row 17

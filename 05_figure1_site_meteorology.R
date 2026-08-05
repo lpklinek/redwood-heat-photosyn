@@ -17,23 +17,20 @@ dates_df_G <- data.frame(date = dates_G) %>%
 
 ## prepping plot data ----
 plot_data <- patched_data %>%
-  filter(site == 'Garcia') %>%
   pivot_longer(cols = c(Tmax, Tmin, VPDavg, VPDmax, VPDmin), names_to = "variable", values_to = "values") %>%
-  mutate(date = ymd(date)) %>%
+  mutate(date = as.Date(date)) %>%
   filter(date < '2024-10-10')
 
 
 # year boundaries (Jan 1 of each year)
 year_lines <- plot_data %>%
-  mutate(date = ymd(date)) %>%
   distinct(year = year(date)) %>%
   filter(year!=2022) %>%
   mutate(date = ymd(paste0(year, "-01-01")))
 
 # year label positions (midpoint of each year)
 year_labels <- plot_data %>%
-  mutate(date = ymd(date),
-         year = year(date)) %>%
+  mutate(year = year(date)) %>%
   group_by(year) %>%
   summarize(
     mid_date = as.Date(mean(as.numeric(date), na.rm = TRUE), origin = "1970-01-01"),
@@ -43,19 +40,18 @@ year_labels <- plot_data %>%
 
 
 panel1 <- plot_data %>%
-  mutate(date = ymd(date)) %>%
   ggplot(aes(x = date, y = values, group = site)) +
   # dashed vertical lines for year boundaries
   geom_vline(
     data = year_lines,
-    aes(xintercept = as.numeric(date)),
+    aes(xintercept = date),
     linetype = "dashed",
     color = "black",
     alpha = 0.8,
     linewidth = 0.6
   ) +
   geom_vline(data = dates_df_G, 
-             aes(xintercept = as.numeric(date)), 
+             aes(xintercept = date), 
              color="gray60",
              #linetype="dotted",
              lwd = 0.5, 
@@ -116,12 +112,11 @@ panel1 <- plot_data %>%
 
 
 panel2 <- plot_data %>%
-  mutate(date = ymd(date)) %>%
   ggplot(aes(x = date, y = values, group = site)) +
   # dashed vertical lines for year boundaries 
   geom_vline(
     data = year_lines,
-    aes(xintercept = as.numeric(date)),
+    aes(xintercept = date),
     linetype = "dashed",
     color = "black",
     alpha = 0.8,
@@ -129,7 +124,7 @@ panel2 <- plot_data %>%
   ) +
   # gray lines for sampling days
   geom_vline(data = dates_df_G, 
-             aes(xintercept = as.numeric(date)), 
+             aes(xintercept = date), 
              color="gray60",
              lwd = 0.5, 
              alpha = 0.4, 
@@ -188,14 +183,12 @@ panel2 <- plot_data %>%
 
 
 
-twopanel <- panel1 /
+fig1 <- panel1 /
   panel2 +
   plot_layout(
     ncol = 1
   )+
   plot_annotation(tag_levels = 'a', tag_suffix = ')')
 
-twopanel
-ggsave(twopanel, filename = "/Users/lklinek/Desktop/Dissertation/Chapter_One/REVISIONS/fig2_met_alt.png",
-       width=8, height=8, dpi=1200)
+fig1
 

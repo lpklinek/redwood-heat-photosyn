@@ -21,7 +21,7 @@ fit_lines <- Li600_all_entire %>%
   }) %>%
   ungroup()
 
-# note: the code below generates the figure without a legend, which I then added separately for formatting
+# note: the code below generates the figure without a legend, which we then added separately for formatting
 # reasons. to generate WITH a legend, remove the theme(legend.position="none")
 
 fig4 <- Li600_all_entire %>%

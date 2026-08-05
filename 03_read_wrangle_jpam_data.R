@@ -52,25 +52,26 @@ allTreeIDs <- c("GarciaE", "GarciaG", "GarciaH")
 # for diurnal data
 clean_diurnal_data <- diurnal_jpam %>%
   pull(filepath) %>%
-  lapply(wrangle_jpam) %>%
+  lapply(wrangle_jPAM) %>%
   bind_rows() %>%
   select(-c(Time..abs.ms., Time..rel.ms.))
 
 # for non-diurnal data
 clean_non_diurnal_data <- non_diurnal_jpam %>%
   pull(filepath) %>%
-  lapply(wrangle_jpam) %>%
+  lapply(wrangle_jPAM) %>%
   bind_rows() %>%
-  select(-c(Temp, AHum, Oxyg., X1, X2, Time..abs.ms., Time..rel.ms.))
+  select(-c(Temp, Time..abs.ms., Time..rel.ms.))
 
 
 clean_jpam <- bind_rows(clean_diurnal_data, clean_non_diurnal_data) %>%
-  filter(!is.na(ETR_max)) %>%
-  filter(ETR_max > 16) %>%
-  filter(is.finite(ETR_max)) %>%
-  filter(!is.na(Fv.Fm)) %>%
+  dplyr::filter(!is.na(ETR_max)) %>%
+  dplyr::filter(ETR_max > 16) %>%
+  dplyr::filter(is.finite(ETR_max)) %>%
+  dplyr::filter(!is.na(Fv.Fm)) %>%
   mutate(Site = substr(treeID, 1, nchar(treeID)-1)) %>%
-  distinct() 
+  distinct() %>%
+  mutate(Hour = as.double(gsub(":00", "", Hour)))
 
 
 

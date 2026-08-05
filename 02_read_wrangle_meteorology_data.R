@@ -86,7 +86,7 @@ patched_data <- all_meteo_complete %>%
   ) %>%
   
   # select relevant columns
-  select(date, Site, Tmax, Tmin, Tavg, VPDmin, VPDavg, VPDmax, everything())
+  select(date, Tmax, Tmin, Tavg, VPDmin, VPDavg, VPDmax, everything())
 
 # Saving processed output ----
 

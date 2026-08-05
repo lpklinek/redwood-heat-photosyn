@@ -31,6 +31,15 @@ reg_table <- Li600_all_entire %>%
   )
 
 
+n_table <- Li600_all_entire %>%
+  mutate(Tdepr = Tleaf - Tref,
+         month = month(date)) %>%
+  filter(Site == "Garcia",
+         LightDark %in% c("L", "D"),
+         PhiPS2 <= 0.83, PhiPS2 > 0) %>%
+  ungroup() %>%
+  count(month, name = "n")
+
 
 reg_table <- reg_table %>%
   left_join(n_table, by = "month")

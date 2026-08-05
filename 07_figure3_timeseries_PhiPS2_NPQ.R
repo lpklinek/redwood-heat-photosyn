@@ -29,7 +29,7 @@ panel1 <- Li600_all_entire %>%
   geom_line(aes(y = 0), linetype = 'dotted', alpha = 0.5) +
   scale_color_viridis_c(option = 'turbo', direction = -1) +
   # vertical lines at each January
-  geom_vline(xintercept = as.numeric(year_breaks), linetype = "dashed", color = "gray40") +
+  geom_vline(xintercept = year_breaks, linetype = "dashed", color = "gray40") +
   # year labels 
   annotate("text",
            x = as.Date(c("2022-07-25", "2023-06-30", "2024-06-29")), 
@@ -64,7 +64,7 @@ panel2 <- final_clean_jpam %>%
   scale_x_date(date_breaks = "2 months", date_labels = "%b", 
                limits=c(as.Date('2022-06-10'), as.Date('2024-10-20')),
                expand=c(0,0))+
-  geom_vline(xintercept = as.numeric(year_breaks), linetype = "dashed", color = "gray40") +
+  geom_vline(xintercept = year_breaks, linetype = "dashed", color = "gray40") +
   # year labels
   annotate("text",
            x = as.Date(c("2022-07-25", "2023-06-30", "2024-06-29")),
