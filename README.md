@@ -1,14 +1,14 @@
 
-# Late Summer Heat and High Vapor Pressure Deficit Lead to Photosynthetic Downregulation in Coast Redwoods (data and code)
+# Summer Heat Stress Amplifies Photochemical Downregulation in Coast Redwoods (data and code)
 
-L. Klinek, J. Au, M. Rodriguez-Caton, M. Palat Rao, L. Fety, G. Koch, T. Dawson, and T.S.
+L. Klinek, J. Au, M. Rodriguez-Caton, M. Palat Rao, L. Fety, G. Koch, and T.S.
 Magney
 
 This repository contains all code and data associated with the paper:
 
-Klinek et al. (2025), Late Summer Heat and High Vapor Pressure Deficit Lead to Photosynthetic Downregulation in Coast Redwoods.
+Klinek et al. (2026), Summer Heat Stress Amplifies Photochemical Downregulation in Coast Redwoods.
 
-To reference the paper, data, or methods, please cite Klinek et al. 2025.
+To reference the paper, data, or methods, please cite Klinek et al. 2026.
 Contact Lily Klinek with questions at lpklinek\@ucdavis.edu.
 This repository's DOI is: [![DOI](https://zenodo.org/badge/962820915.svg)](https://doi.org/10.5281/zenodo.15226480)
 
@@ -18,7 +18,7 @@ This repository contains code to:
 
 -   wrangle and clean coast redwood physiological and fluorescence data, collected at Garcia River Forest in Mendocino County
 
--   analyze and visualize relationships between stomatal parameters, fluorescence parameters, and environmental conditions, particularly relating to heat stress
+-   analyze and visualize relationships between fluorescence parameters and environmental conditions, particularly relating to heat stress
 
 -   analyze and visualize temperature response curves collected using the LI-COR LI6800 portable gas exchange instrument, and light response curves collected using the WALZ JUNIOR-PAM fluorometer
 
@@ -37,6 +37,8 @@ The repository is organized as follows:
     -   `processed` contains cleaned, processed data outputted by scripts 01-04
 
 -   `R_functions` contains functions called in wrangling scripts
+
+-   code to produce figures and tables in the Supplementary Information of the paper can be found in the 'supplementary_figures_code' folder
 
 ## 3. Data and Metadata
 
@@ -69,7 +71,8 @@ Folder name: `01_li600_data_raw`
 Data is organized in folders named with measurement date (YYYY-MM-DD).
 Within each folder, key measurements for all scans are contained in the .csv file with name beginning with "Manual_gsw+F_LI_COR_Default".
 Columns 1-4 (LightDark, Site, TreeID, and Hour) have been manually inputted with associated metadata for each scan.
-LightDark describes the light condition for each leaf (L: light-adapted, measurement taken in ambient light; D: dark-adapted).
+LightDark describes the light condition for each leaf (L: light-acclimated, measurement taken in ambient light; D: dark-acclimated. See 'Methods' section of Klinek et al. 2026 for more information on dark-acclimation procedures).
+
 The other .csv files in each folder are the detailed, high-resolution measurements taken during each individual scan.
 
 Information on all LI600 data columns can be found in the LI-COR LI600 instrument manual, linked [here](https://www.licor.com/support/LI-600/topics/data-file-descriptions.html#Data).
@@ -93,7 +96,7 @@ Folder name: `03_jpam_data_raw`
 
 JUNIOR-PAM data files are labeled with collection date and treeID in the format `MMDDYY_treeID.` Data from 2022 are simply labeled `MMDD_treeID`.
 This is cleaned and corrected by the processing script for consistency.
-Filenames with a number after the treeID are indicative of multiple rounds of sampling done in the same day, wherein the number refers to the sampling round of that file (ex. `040824_GarciaH_2.csv` corresponds to the the second round of sampling for tree GarciaH on 04/08/24).
+Filenames with a number after the treeID are indicative of multiple rounds of sampling done in the same day, wherein the number refers to the sampling round of that file (ex. `040824_GarciaH_2.csv` corresponds to the the second round of sampling for tree GarciaH on 04/08/24. See 'Methods' section of Klinek et al. 2026 for more information on sampling procedure).
 Each data collection has a `.csv` file and a `.pam` file – the `.pam` file can only be properly opened and accessed using the WALZ WinControl-3 software.
 Detailed descriptions of each variable can be found in the [instrument manual](https://www.walz.com/files/downloads/manuals/junior-pam/JUNIOR_PAM_02.pdf).
 
@@ -108,7 +111,7 @@ Information about each variable can be found in the instrument manual's [Summary
 
 ## 4. Instructions for Use
 
-First, open the `00_install_load_packages.R` script and edit line 43 to set your working directory to wherever the `Klinek_et_al_2025` folder has been saved on your local computer.
+First, open the `00_install_load_packages.R` script and edit line 77 to set your working directory to wherever the `Klinek_et_al_2026` folder has been saved on your local computer.
 
 Once the working directory has been set, data cleaning and processing scripts should be run in the following numeric order:
 
@@ -122,7 +125,7 @@ Once the working directory has been set, data cleaning and processing scripts sh
 
 `04_read_wrangle_li6800_data.R`
 
-Scripts 05-12 can be used to replicate the figures in Klinek et al. 2025.
+Scripts 05-12 can be used to replicate the figures and tables in the main body of Klinek et al. 2026. Scripts 11-20 in the 'supplementary_figures_code' folder can be used to replicate Supplementary Information figures and tables.
 
 ## 5. Issues or Questions
 
