@@ -10,7 +10,7 @@ Klinek et al. (2026), Summer Heat Stress Amplifies Photochemical Downregulation 
 
 To reference the paper, data, or methods, please cite Klinek et al. 2026.
 Contact Lily Klinek with questions at lpklinek\@ucdavis.edu.
-This repository's DOI is: ![Static Badge](https://img.shields.io/badge/DOI-10.5281/15226480-blue)
+This repository's DOI is: ![Static Badge](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21815524-blue?link=https%3A%2F%2Fdoi.org%2F10.5281%2Fzenodo.21815524)
 
 ## 1. Overview
 
