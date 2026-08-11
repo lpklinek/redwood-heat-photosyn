@@ -1,4 +1,4 @@
-# Plotting Figure 8: temperature response curves from Li6800
+# Plotting Figure 6: temperature response curves from Li6800
 # Written by Lily Klinek (lpklinek@ucdavis.edu)
 # 
 
@@ -37,6 +37,12 @@ plot_data['air_temp'][plot_data['step'] == 5] = 34
 plot_data['air_temp'][plot_data['step'] == 6] = 37
 plot_data['air_temp'][plot_data['step'] == 7] = 40
 plot_data['air_temp'][plot_data['step'] == 8] = 43
+
+plot_data$curve <- interaction(plot_data$Date, plot_data$TreeID)
+plot_data$TreeID <- as.factor(plot_data$TreeID)
+plot_data$Date   <- as.factor(plot_data$Date)
+plot_data$curve   <- as.factor(plot_data$curve)
+
 
 plot_data %>%
   filter(Ci>0) %>%
@@ -100,12 +106,6 @@ m1 <- lmer(A ~ air_temp + (1|Date/TreeID), data = plot_data)
 m2 <- lmer(A ~ air_temp + Ci + (1|Date/TreeID), data = plot_data)
 
 anova(m1, m2)
-
-high_temp <- plot_data %>%
-  filter(Ci >= 250, Ci <= 300, air_temp >= 34)
-
-high_temp_model <- lm(A ~ air_temp, data = high_temp)
-summary(high_temp_model)
 
 
 
