@@ -125,7 +125,7 @@ Once the working directory has been set, data cleaning and processing scripts sh
 
 `04_read_wrangle_li6800_data.R`
 
-Scripts 05-12 can be used to replicate the figures and tables in the main body of Klinek et al. 2026. Scripts 11-20 in the 'supplementary_figures_code' folder can be used to replicate Supplementary Information figures and tables.
+Scripts 05-12 can be used to replicate the figures and tables in the main body of Klinek et al. 2026. Scripts 11-21 in the 'supplementary_figures_code' folder can be used to replicate Supplementary Information figures and tables.
 
 ## 5. Issues or Questions
 
