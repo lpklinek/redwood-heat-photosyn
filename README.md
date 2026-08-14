@@ -1,12 +1,12 @@
 
-# Summer Heat Stress Amplifies Photochemical Downregulation in Coast Redwoods (data and code)
+# Summer Heat Stress Downregulates Photochemistry in Coast Redwoods (data and code)
 
 L. Klinek, J. Au, M. Rodriguez-Caton, M. Palat Rao, L. Fety, G. Koch, and T.S.
 Magney
 
 This repository contains all code and data associated with the paper:
 
-Klinek et al. (2026), Summer Heat Stress Amplifies Photochemical Downregulation in Coast Redwoods.
+Klinek et al. (2026), Summer Heat Stress Downregulates Photochemistry in Coast Redwoods.
 
 To reference the paper, data, or methods, please cite Klinek et al. 2026.
 Contact Lily Klinek with questions at lpklinek\@ucdavis.edu.
