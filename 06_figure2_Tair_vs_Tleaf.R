@@ -2,8 +2,15 @@
 # Written by Lily Klinek (lpklinek@ucdavis.edu)
 # 
 
+fig2_data <- Li600_all_entire %>%
+  filter(LightDark == 'L') %>%
+  filter(!is.na(Site)) %>%
+  filter(Site == 'Garcia') %>%
+  filter(!is.na(Hour)) %>%
+  mutate(Hour = as.integer(Hour))
 
-fig2 <- Li600_all_entire %>%
+# plot
+fig2_data <- Li600_all_entire %>%
   filter(LightDark=='L') %>%
   filter(!is.na(Site)) %>%
   filter(Site=='Garcia') %>%
@@ -25,3 +32,18 @@ fig2 <- Li600_all_entire %>%
         legend.text=element_text(size=11))
 
 fig2
+
+
+
+## calculating paired difference
+fig2_data <- fig2_data %>%
+  mutate(diff_leaf_air = Tleaf - Tref)
+
+mean_diff <- mean(fig2_data$diff_leaf_air, na.rm = TRUE)
+mean_diff
+
+## performing paired t-test
+t_test_result <- t.test(fig2_data$Tleaf, fig2_data$Tref, paired = TRUE)
+t_test_result
+
+
